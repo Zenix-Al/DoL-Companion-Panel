@@ -9,7 +9,7 @@ import {
 import {
   CHEAT_CONTRACT_CONSTANTS,
   validateCheatDefinition,
-} from '../../src/cheats/create-cheat.js';
+} from '../../src/cheat/create-cheat.js';
 
 const validateCheatDescriptorContract = validateCheatDefinition;
 const cheatContractConstants = CHEAT_CONTRACT_CONSTANTS;

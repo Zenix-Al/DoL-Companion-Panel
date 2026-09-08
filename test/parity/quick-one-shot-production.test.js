@@ -1,13 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { arousalCheat } from '../../src/cheats/definitions/quick/arousal.cheat.js';
-import { enemyStateCheat } from '../../src/cheats/definitions/quick/enemy-state.cheat.js';
-import { gameCheatsCheat } from '../../src/cheats/definitions/quick/game-cheats.cheat.js';
-import { hygieneCheat } from '../../src/cheats/definitions/quick/hygiene.cheat.js';
-import { randomEncountersCheat } from '../../src/cheats/definitions/quick/random-encounters.cheat.js';
-import { templeVowCheat } from '../../src/cheats/definitions/quick/temple-vow.cheat.js';
-import { mountCheatDescriptor } from '../../src/cheats/runtime/renderer.js';
+import { arousalCheat } from '../../src/cheat/definitions/quick/arousal.cheat.js';
+import { enemyStateCheat } from '../../src/cheat/definitions/quick/enemy-state.cheat.js';
+import { gameCheatsCheat } from '../../src/cheat/definitions/quick/game-cheats.cheat.js';
+import { hygieneCheat } from '../../src/cheat/definitions/quick/hygiene.cheat.js';
+import { randomEncountersCheat } from '../../src/cheat/definitions/quick/random-encounters.cheat.js';
+import { templeVowCheat } from '../../src/cheat/definitions/quick/temple-vow.cheat.js';
+import { mountCheatDescriptor } from '../../src/cheat/runtime/renderer.js';
 import { createDomWithSugarCube } from '../helpers/dom-test-env.js';
 import { createFakeConfigFacade } from '../helpers/fake-config-facade.js';
 import { createFakeGameAdapter } from '../helpers/fake-game-adapter.js';

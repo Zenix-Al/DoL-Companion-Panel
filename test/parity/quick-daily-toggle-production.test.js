@@ -1,15 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { edenGardenCheat } from '../../src/cheats/definitions/quick/eden-garden.cheat.js';
-import { edenMushroomsCheat } from '../../src/cheats/definitions/quick/eden-mushrooms.cheat.js';
-import { edenSpringCheat } from '../../src/cheats/definitions/quick/eden-spring.cheat.js';
-import { edenTimerCheat } from '../../src/cheats/definitions/quick/eden-timer.cheat.js';
-import { infiniteNpcPregnancyCheat } from '../../src/cheats/definitions/quick/infinite-npc-pregnancy.cheat.js';
-import { maximumStrayTasksCheat } from '../../src/cheats/definitions/quick/maximum-stray-tasks.cheat.js';
-import { mountCheatDescriptor } from '../../src/cheats/runtime/renderer.js';
-import { createCheatToggleRuntime } from '../../src/cheats/runtime/toggle-runtime.js';
-import { CHEAT_CONFIG_SCHEMA } from '../../src/core/config/cheat-config-schema.js';
+import { edenGardenCheat } from '../../src/cheat/definitions/quick/eden-garden.cheat.js';
+import { edenMushroomsCheat } from '../../src/cheat/definitions/quick/eden-mushrooms.cheat.js';
+import { edenSpringCheat } from '../../src/cheat/definitions/quick/eden-spring.cheat.js';
+import { edenTimerCheat } from '../../src/cheat/definitions/quick/eden-timer.cheat.js';
+import { infiniteNpcPregnancyCheat } from '../../src/cheat/definitions/quick/infinite-npc-pregnancy.cheat.js';
+import { maximumStrayTasksCheat } from '../../src/cheat/definitions/quick/maximum-stray-tasks.cheat.js';
+import { mountCheatDescriptor } from '../../src/cheat/runtime/renderer.js';
+import { createCheatToggleRuntime } from '../../src/cheat/runtime/toggle-runtime.js';
+import { CHEAT_CONFIG_SCHEMA } from '../../src/cheat/contract/config-schema.js';
 import { createDomWithSugarCube } from '../helpers/dom-test-env.js';
 import { createFakeCheatScheduler } from '../helpers/fake-cheat-scheduler.js';
 import { createFakeConfigFacade } from '../helpers/fake-config-facade.js';

@@ -1,13 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { scAdapter } from '../../src/core/sugarcube/adapter.js';
-import { createCheatCallbackContext } from '../../src/cheats/runtime/context.js';
+import { scAdapter } from '../../src/platform/sugarcube/adapter.js';
+import { createCheatCallbackContext } from '../../src/cheat/runtime/context.js';
 import {
   CheatGamePathError,
   CheatRuntimeUnavailableError,
   createGameContext,
-} from '../../src/cheats/runtime/game-context.js';
+} from '../../src/cheat/runtime/game-context.js';
 import { createDomWithSugarCube } from '../helpers/dom-test-env.js';
 import { createFakeConfigFacade } from '../helpers/fake-config-facade.js';
 import { createFakeGameAdapter } from '../helpers/fake-game-adapter.js';

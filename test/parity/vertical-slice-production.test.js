@@ -1,11 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { cheatCatalog } from '../../src/cheats/index.js';
-import { bodySizeCheat } from '../../src/cheats/definitions/player/body-size.cheat.js';
-import { moneyCheat } from '../../src/cheats/definitions/player/money.cheat.js';
-import { maxHarmonyCheat } from '../../src/cheats/definitions/world/max-harmony.cheat.js';
-import { mountCheatDescriptor } from '../../src/cheats/runtime/renderer.js';
+import { cheatCatalog } from '../../src/cheat/index.js';
+import { bodySizeCheat } from '../../src/cheat/definitions/player/body-size.cheat.js';
+import { moneyCheat } from '../../src/cheat/definitions/player/money.cheat.js';
+import { maxHarmonyCheat } from '../../src/cheat/definitions/world/max-harmony.cheat.js';
+import { mountCheatDescriptor } from '../../src/cheat/runtime/renderer.js';
 import { createDomWithSugarCube } from '../helpers/dom-test-env.js';
 import { createFakeConfigFacade } from '../helpers/fake-config-facade.js';
 import { createFakeGameAdapter } from '../helpers/fake-game-adapter.js';

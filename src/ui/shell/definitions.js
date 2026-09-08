@@ -35,7 +35,7 @@ function quickShell({ data, runtime }) {
   }
   rows.push({ key: 'footer', role: 'footer', controls: [
     { type: 'text', text: `Cheat version: ${runtime.cheatVer}${runtime.cheatVerType ? ` ${runtime.cheatVerType}` : ''}` },
-    { type: 'link', key: 'update', text: 'Check for update', href: data.downloadSite },
+    { type: 'link', key: 'releases', text: 'GitHub Releases', href: data.releaseSite },
     { type: 'link', key: 'source', text: 'Source Code', href: data.sourceCode },
   ] });
   return rows;

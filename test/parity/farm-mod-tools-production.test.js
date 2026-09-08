@@ -1,12 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { farmAnimalAffinityCheat } from '../../src/cheats/definitions/world/farm-animal-affinity.cheat.js';
-import { farmAssaultTimeCheat } from '../../src/cheats/definitions/world/farm-assault-time.cheat.js';
-import { farmBuildTimeCheat } from '../../src/cheats/definitions/world/farm-build-time.cheat.js';
-import { produceSalesReportCheat } from '../../src/cheats/definitions/world/produce-sales-report.cheat.js';
-import { vrelCoinsUsageCheat } from '../../src/cheats/definitions/world/vrel-coins-usage.cheat.js';
-import { mountCheatDescriptor } from '../../src/cheats/runtime/renderer.js';
+import { farmAnimalAffinityCheat } from '../../src/cheat/definitions/world/farm-animal-affinity.cheat.js';
+import { farmAssaultTimeCheat } from '../../src/cheat/definitions/world/farm-assault-time.cheat.js';
+import { farmBuildTimeCheat } from '../../src/cheat/definitions/world/farm-build-time.cheat.js';
+import { produceSalesReportCheat } from '../../src/cheat/definitions/world/produce-sales-report.cheat.js';
+import { vrelCoinsUsageCheat } from '../../src/cheat/definitions/world/vrel-coins-usage.cheat.js';
+import { mountCheatDescriptor } from '../../src/cheat/runtime/renderer.js';
 import { createDomWithSugarCube } from '../helpers/dom-test-env.js';
 import { createFakeConfigFacade } from '../helpers/fake-config-facade.js';
 import { createFakeGameAdapter } from '../helpers/fake-game-adapter.js';

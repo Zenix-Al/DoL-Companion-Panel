@@ -41,6 +41,9 @@ run(process.execPath, [
 console.log('Cheat factory verification: generated manifest drift');
 run(process.execPath, [join(projectRoot, 'scripts/generate-cheat-manifest.js'), '--check']);
 
+console.log('Cheat factory verification: documentation');
+run(process.execPath, [join(projectRoot, 'scripts/check-docs.js')]);
+
 console.log('Cheat factory verification: complete executable suite');
 const tap = run(process.execPath, [
   '--test',

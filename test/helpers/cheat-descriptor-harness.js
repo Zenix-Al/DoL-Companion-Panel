@@ -1,4 +1,4 @@
-import { createCheatCallbackContext } from '../../src/cheats/runtime/context.js';
+import { createCheatCallbackContext } from '../../src/cheat/runtime/context.js';
 
 import { createFakeCheatScheduler } from './fake-cheat-scheduler.js';
 import { createFakeConfigFacade } from './fake-config-facade.js';

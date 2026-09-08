@@ -4,6 +4,33 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.1.0] - Architecture Finalization
+
+This release finishes the repository and runtime architecture work begun after
+3.0.0 and fixes the release/injector problems found during that reorganization.
+
+### Added
+
+- Added reproducible readable, optimized, and local-injector release artifacts
+- Added fixture-tested injection, restoration, package, documentation, and
+  import-boundary verification
+- Added task-oriented user, contributor, architecture, testing, and historical
+  documentation indexes
+
+### Changed
+
+- Reorganized production source around app, cheat, platform, core, and UI
+  ownership boundaries
+- Made the corrected multi-platform injector package fully generated from
+  tracked source without manual payload copying
+- Replaced the obsolete MediaFire update link with an explicitly labeled GitHub
+  Releases link; automatic updates remain the userscript manager’s responsibility
+
+### Removed
+
+- Removed the legacy feature/fetcher facades, obsolete build scripts, duplicate
+  injector launchers, and scattered source/test documentation
+
 ## [3.0.0] - Major Framework Overhaul
 
 A major release that moves the cheat system to a more reliable descriptor-based

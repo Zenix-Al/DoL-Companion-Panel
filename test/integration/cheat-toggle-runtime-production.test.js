@@ -1,11 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { infiniteArousalCheat } from '../../src/cheats/definitions/player/infinite-arousal.cheat.js';
-import { maximumChurchTasksCheat } from '../../src/cheats/definitions/world/maximum-church-tasks.cheat.js';
-import { createCheat } from '../../src/cheats/create-cheat.js';
-import { mountCheatDescriptor } from '../../src/cheats/runtime/renderer.js';
-import { createCheatToggleRuntime } from '../../src/cheats/runtime/toggle-runtime.js';
+import { infiniteArousalCheat } from '../../src/cheat/definitions/player/infinite-arousal.cheat.js';
+import { maximumChurchTasksCheat } from '../../src/cheat/definitions/world/maximum-church-tasks.cheat.js';
+import { createCheat } from '../../src/cheat/create-cheat.js';
+import { mountCheatDescriptor } from '../../src/cheat/runtime/renderer.js';
+import { createCheatToggleRuntime } from '../../src/cheat/runtime/toggle-runtime.js';
 import { createDomWithSugarCube } from '../helpers/dom-test-env.js';
 import { createFakeCheatScheduler } from '../helpers/fake-cheat-scheduler.js';
 import { createFakeConfigFacade } from '../helpers/fake-config-facade.js';

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { cheatCatalog } from '../../src/cheats/index.js';
+import { cheatCatalog } from '../../src/cheat/index.js';
 
 import { legacyCheatInventory } from './legacy-cheat-inventory.js';
 import {

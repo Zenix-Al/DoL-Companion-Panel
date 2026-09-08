@@ -3,8 +3,8 @@ import { resolve } from 'node:path';
 import { checkCheatManifest, generateCheatManifest } from './cheat-manifest.js';
 
 const options = {
-  definitionsDir: resolve('src/cheats/definitions'),
-  outputFile: resolve('src/generated/cheats.generated.js'),
+  definitionsDir: resolve('src/cheat/definitions'),
+  outputFile: resolve('src/cheat/catalog/generated.js'),
 };
 const check = process.argv.includes('--check');
 const result = check ? checkCheatManifest(options) : generateCheatManifest(options);

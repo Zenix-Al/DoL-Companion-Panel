@@ -1,8 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { createDiagnosticProbe } from '../../src/diagnostics/probe.js';
-import { createDiagnosticRunner, formatDiagnosticReport } from '../../src/diagnostics/runner.js';
+import {
+  createDiagnosticProbe,
+  createDiagnosticRunner,
+  formatDiagnosticReport,
+} from '../../src/core/health.js';
 
 const probe = (id, run, options = {}) =>
   createDiagnosticProbe({ id, label: id, scope: 'runtime', timeoutMs: 30, run, ...options });

@@ -5,7 +5,7 @@ import { readFile } from 'node:fs/promises';
 import {
   LAYOUT_CLASSES,
   classifyLayoutControls,
-} from '../../src/ui/renderers/layout-primitives.js';
+} from '../../src/ui/cheat-controls/layout-primitives.js';
 
 test('layout vocabulary classifies shell rows without fixed-position metadata', () => {
   assert.equal(classifyLayoutControls([{ type: 'header' }]), LAYOUT_CLASSES.heading);
@@ -16,9 +16,9 @@ test('layout vocabulary classifies shell rows without fixed-position metadata', 
 });
 
 test('responsive layout contract covers wide, tablet, and narrow descriptor rows', async () => {
-  const modalCss = await readFile(new URL('../../src/ui/assets/modal.css', import.meta.url), 'utf8');
+  const modalCss = await readFile(new URL('../../src/ui/theme/modal.css', import.meta.url), 'utf8');
   const responsiveCss = await readFile(
-    new URL('../../src/ui/assets/responsive.css', import.meta.url),
+    new URL('../../src/ui/theme/responsive.css', import.meta.url),
     'utf8'
   );
 

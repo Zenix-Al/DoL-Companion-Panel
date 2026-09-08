@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { createCheat } from '../../src/cheats/create-cheat.js';
+import { createCheat } from '../../src/cheat/create-cheat.js';
 import {
   createFullDescriptor,
   createOneShotDescriptor,

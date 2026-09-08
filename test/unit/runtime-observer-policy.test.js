@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { defaultDetectLoadTrigger } from '../../src/core/runtime-observer-policy.js';
+import { defaultDetectLoadTrigger } from '../../src/app/observers/runtime-observer-policy.js';
 
 function macroButton(text) {
   return {

@@ -12,7 +12,7 @@ function clearRegisteredActions({ getKeys, unregister, clearErrorHook }) {
 
 test('dispatchUiAction blocks unknown actions', async () => {
   const env = createDomWithSugarCube({ passage: 'Town' });
-  const { dispatchUiAction } = await import('../../src/ui/helpers/action-dispatch.js');
+  const { dispatchUiAction } = await import('../../src/app/commands/ui-action-dispatch.js');
   const { getKeys, unregister, clearErrorHook } = await import(
     '../../src/core/actions/dispatcher.js'
   );
@@ -28,7 +28,7 @@ test('dispatchUiAction blocks unknown actions', async () => {
 
 test('dispatchUiAction blocks non-allowlisted actions in Start passage', async () => {
   const env = createDomWithSugarCube({ passage: 'Start' });
-  const { dispatchUiAction } = await import('../../src/ui/helpers/action-dispatch.js');
+  const { dispatchUiAction } = await import('../../src/app/commands/ui-action-dispatch.js');
   const { register, getKeys, unregister, clearErrorHook } = await import(
     '../../src/core/actions/dispatcher.js'
   );
@@ -50,7 +50,7 @@ test('dispatchUiAction blocks non-allowlisted actions in Start passage', async (
 
 test('dispatchUiAction allows allowlisted actions in Start passage', async () => {
   const env = createDomWithSugarCube({ passage: 'Start' });
-  const { dispatchUiAction } = await import('../../src/ui/helpers/action-dispatch.js');
+  const { dispatchUiAction } = await import('../../src/app/commands/ui-action-dispatch.js');
   const { register, getKeys, unregister, clearErrorHook } = await import(
     '../../src/core/actions/dispatcher.js'
   );
@@ -72,7 +72,7 @@ test('dispatchUiAction allows allowlisted actions in Start passage', async () =>
 
 test('dispatchUiAction enforces destructive confirmation', async () => {
   const env = createDomWithSugarCube({ passage: 'Town' });
-  const { dispatchUiAction } = await import('../../src/ui/helpers/action-dispatch.js');
+  const { dispatchUiAction } = await import('../../src/app/commands/ui-action-dispatch.js');
   const { register, getKeys, unregister, clearErrorHook } = await import(
     '../../src/core/actions/dispatcher.js'
   );

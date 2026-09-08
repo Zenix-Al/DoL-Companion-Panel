@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { createCheat } from '../../src/cheats/create-cheat.js';
-import { mountCheatDescriptor } from '../../src/cheats/runtime/renderer.js';
+import { createCheat } from '../../src/cheat/create-cheat.js';
+import { mountCheatDescriptor } from '../../src/cheat/runtime/renderer.js';
 import { createDomWithSugarCube } from '../helpers/dom-test-env.js';
 import { createFakeConfigFacade } from '../helpers/fake-config-facade.js';
 import { createFakeGameAdapter } from '../helpers/fake-game-adapter.js';
@@ -315,5 +315,42 @@ test('production renderer teardown removes only its root and listeners and abort
   assert.equal(calls, 1);
   assert.equal(env.document.querySelectorAll('[data-cheat-id]').length, 1);
   await second.dispose();
+  env.cleanup();
+});
+
+test('disposed renderer suppresses control writes from an in-flight async sync', async () => {
+  const env = createDomWithSugarCube();
+  let release;
+  let started;
+  const didStart = new Promise((resolve) => {
+    started = resolve;
+  });
+  const descriptor = createCheat({
+    id: 'test.renderer-cancel-sync',
+    location: location(5),
+    meta: { label: 'Cancel sync', controls: [{ key: 'status', type: 'text' }] },
+    sync: async ({ controls, signal }) => {
+      started(signal);
+      await new Promise((resolve) => {
+        release = resolve;
+      });
+      controls.text('status', 'late write');
+    },
+  });
+  const mounted = await mountCheatDescriptor({
+    descriptor,
+    document: env.document,
+    adapter: createFakeGameAdapter().game,
+    config: emptyConfig(),
+  });
+  const status = mounted.controls.element('status');
+  const refresh = mounted.requestRefresh('manual');
+  const signal = await didStart;
+
+  await mounted.dispose();
+  assert.equal(signal.aborted, true);
+  release();
+  assert.equal(await refresh, true);
+  assert.equal(status.textContent, '');
   env.cleanup();
 });

@@ -1,13 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { GAME_VERSION_ELEMENT_ID } from '../../src/constants/ui.js';
+import { GAME_VERSION_ELEMENT_ID } from '../../src/platform/sugarcube/constants.js';
 import {
   ensureActiveRuntimeEngine,
   getActiveRuntimeEngine,
   getRegisteredRuntimeEngines,
   setActiveRuntimeEngine,
-} from '../../src/core/runtime-engine-registry.js';
+} from '../../src/platform/runtime-engine-registry.js';
 import { createDomWithSugarCube } from '../helpers/dom-test-env.js';
 
 test('runtime engine registry resolves SugarCube profile and prerequisite states', async () => {

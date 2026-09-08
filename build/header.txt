@@ -1,0 +1,20 @@
+// ==UserScript==
+// @name         DoL Companion Panel
+// @namespace    https://github.com/Zenix-Al/DoL-Companion-Panel
+// @version      {{VERSION}}
+// @description  Floating QoL panel, stat controls & variable tools for Degrees of Lewdity
+// @author       Zenix-Al
+// @match        https://vanilla.dolmods.net/*
+// @match        https://dolp.dolmods.net/*
+// @match        https://*.dolmods.net/*
+// @match        file:///*.html
+// @match        file:///*.htm
+// @icon         https://f95zone.to/data/avatars/l/1963/1963870.jpg
+// @run-at       document-idle
+// @grant        unsafeWindow
+// @license      GPL-3.0-or-later
+// ==/UserScript==
+// ------------------------------------------------------------
+{{BANNER}}
+{{BUILD_INFO}}
+// ------------------------------------------------------------
