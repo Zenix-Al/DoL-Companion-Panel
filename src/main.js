@@ -1,3 +1,3 @@
-import { startCheatInjection } from './core/injection.js';
+import { startCheatInjection } from './app/injection.js';
 
 startCheatInjection();

@@ -3,12 +3,12 @@ import assert from 'node:assert/strict';
 
 import { createSectionShells } from '../../src/ui/shell/definitions.js';
 import { renderSectionShell } from '../../src/ui/shell/renderer.js';
-import { modalTemplate, layoutTemplate, renderTemplate } from '../../src/ui/renderers/layout.js';
+import { modalTemplate, layoutTemplate, renderTemplate } from '../../src/ui/shell/layout.js';
 import { createDomWithSugarCube } from '../helpers/dom-test-env.js';
 
 const context = {
   data: {
-    downloadSite: 'https://example.test/update',
+    releaseSite: 'https://example.test/releases',
     sourceCode: 'https://example.test/source',
   },
   runtime: {
@@ -48,6 +48,9 @@ test('all section shells render without catalog descriptors or the legacy metada
     assert.ok(keys.includes('quick.compatibility'));
     assert.ok(keys.includes('quick.footer'));
     assert.ok(keys.includes('misc.pregnancy-time-help'));
+    const releaseLink = roots[0].root.querySelector('[data-shell-control="releases"]');
+    assert.equal(releaseLink?.textContent, 'GitHub Releases');
+    assert.equal(releaseLink?.getAttribute('href'), context.data.releaseSite);
   } finally {
     roots.forEach(({ dispose }) => dispose());
     env.cleanup();
@@ -93,4 +96,3 @@ test('layout symbols use stable Unicode escapes and render without mojibake', ()
     env.cleanup();
   }
 });
-

@@ -1,10 +1,10 @@
-import { METHOD_ACTIONS } from '../../src/features/listeners/action-map-methods.js';
-import { TOGGLE_DEFINITIONS } from '../../src/features/listeners/action-map-toggle.js';
 import {
   BOUND_ACTIONS,
+  METHOD_ACTIONS,
   NAV_ACTIONS,
   SIMPLE_UI_ACTIONS,
-} from '../../src/features/listeners/action-map-ui.js';
+  TOGGLE_DEFINITIONS,
+} from './legacy-action-map-fixture.js';
 
 export const BEHAVIOR_STATUSES = Object.freeze([
   'working',
@@ -196,7 +196,7 @@ export const knownBrokenUiControls = Object.freeze([
     metadataFile: 'src/ui/metadata/quick/index.js',
     observedFailure: 'The Export control has no registered dispatcher action.',
     intendedBehavior: 'Export the available server-save slots to the configured local server.',
-    evidence: 'npm run lint:actions:strict',
+    evidence: 'test/integration/legacy-shell-command-classification.test.js',
     verification: 'test/regression/server-save-actions.test.js',
   }),
   Object.freeze({
@@ -207,7 +207,7 @@ export const knownBrokenUiControls = Object.freeze([
     metadataFile: 'src/ui/metadata/quick/index.js',
     observedFailure: 'The Import control has no registered dispatcher action.',
     intendedBehavior: 'Import server-save data selected through the local-server workflow.',
-    evidence: 'npm run lint:actions:strict',
+    evidence: 'test/integration/legacy-shell-command-classification.test.js',
     verification: 'test/regression/server-save-actions.test.js',
   }),
 ]);

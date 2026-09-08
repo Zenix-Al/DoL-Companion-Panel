@@ -13,7 +13,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { pathToFileURL } from 'node:url';
 
-import { createCheatCatalog } from '../../src/cheats/catalog.js';
+import { createCheatCatalog } from '../../src/cheat/catalog.js';
 import {
   checkCheatManifest,
   discoverCheatManifestEntries,

@@ -1,9 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { createCheat } from '../../src/cheats/create-cheat.js';
-import { mountCheatDescriptor } from '../../src/cheats/runtime/renderer.js';
-import { npcTraitEditorCheat } from '../../src/cheats/definitions/world/npc-trait-editor.cheat.js';
+import { createCheat } from '../../src/cheat/create-cheat.js';
+import { mountCheatDescriptor } from '../../src/cheat/runtime/renderer.js';
+import { npcTraitEditorCheat } from '../../src/cheat/definitions/world/npc-trait-editor.cheat.js';
 import { createDomWithSugarCube } from '../helpers/dom-test-env.js';
 import { createFakeConfigFacade } from '../helpers/fake-config-facade.js';
 import { createFakeGameAdapter } from '../helpers/fake-game-adapter.js';

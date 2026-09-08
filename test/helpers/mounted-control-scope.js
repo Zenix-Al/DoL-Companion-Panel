@@ -97,4 +97,4 @@ export function createMountedControlScope({ document, descriptor, parent = docum
     },
   };
 }
-import { createControlScope } from '../../src/cheats/runtime/control-scope.js';
+import { createControlScope } from '../../src/cheat/runtime/control-scope.js';

@@ -1,13 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { enemyStatsCheat } from '../../src/cheats/definitions/player/enemy-stats.cheat.js';
-import { examCheat } from '../../src/cheats/definitions/player/exam.cheat.js';
-import { fameCheat } from '../../src/cheats/definitions/player/fame.cheat.js';
-import { hentaiSkillCheat } from '../../src/cheats/definitions/player/hentai-skill.cheat.js';
-import { schoolReputationCheat } from '../../src/cheats/definitions/player/school-reputation.cheat.js';
-import { talentCheat } from '../../src/cheats/definitions/player/talent.cheat.js';
-import { mountCheatDescriptor } from '../../src/cheats/runtime/renderer.js';
+import { enemyStatsCheat } from '../../src/cheat/definitions/player/enemy-stats.cheat.js';
+import { examCheat } from '../../src/cheat/definitions/player/exam.cheat.js';
+import { fameCheat } from '../../src/cheat/definitions/player/fame.cheat.js';
+import { hentaiSkillCheat } from '../../src/cheat/definitions/player/hentai-skill.cheat.js';
+import { schoolReputationCheat } from '../../src/cheat/definitions/player/school-reputation.cheat.js';
+import { talentCheat } from '../../src/cheat/definitions/player/talent.cheat.js';
+import { mountCheatDescriptor } from '../../src/cheat/runtime/renderer.js';
 import { createDomWithSugarCube } from '../helpers/dom-test-env.js';
 import { createFakeConfigFacade } from '../helpers/fake-config-facade.js';
 import { createFakeGameAdapter } from '../helpers/fake-game-adapter.js';

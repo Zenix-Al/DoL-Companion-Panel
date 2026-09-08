@@ -4,7 +4,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { pathToFileURL } from 'node:url';
 
-import { createCheatCatalog } from '../../src/cheats/catalog.js';
+import { createCheatCatalog } from '../../src/cheat/catalog.js';
 import { createOneShotDescriptor } from '../contracts/cheat-contract-cases.js';
 
 function createPlacedDescriptor(id, section, order, overrides = {}) {
@@ -79,7 +79,7 @@ test('catalog validates descriptor config references against the central path in
 });
 
 test('contract and catalog modules import under Node without DOM or SugarCube globals', () => {
-  const moduleUrl = pathToFileURL(resolve('src/cheats/catalog.js')).href;
+  const moduleUrl = pathToFileURL(resolve('src/cheat/catalog.js')).href;
   const script = `
     delete globalThis.window;
     delete globalThis.document;

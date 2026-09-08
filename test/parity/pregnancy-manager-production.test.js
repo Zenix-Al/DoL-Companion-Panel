@@ -1,9 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { namedNpcPregnancyCheat } from '../../src/cheats/definitions/world/named-npc-pregnancy.cheat.js';
-import { storedNpcPregnancyCheat } from '../../src/cheats/definitions/world/stored-npc-pregnancy.cheat.js';
-import { mountCheatDescriptor } from '../../src/cheats/runtime/renderer.js';
+import { namedNpcPregnancyCheat } from '../../src/cheat/definitions/world/named-npc-pregnancy.cheat.js';
+import { storedNpcPregnancyCheat } from '../../src/cheat/definitions/world/stored-npc-pregnancy.cheat.js';
+import { mountCheatDescriptor } from '../../src/cheat/runtime/renderer.js';
 import { createDomWithSugarCube } from '../helpers/dom-test-env.js';
 import { createFakeCheatScheduler } from '../helpers/fake-cheat-scheduler.js';
 import { createFakeConfigFacade } from '../helpers/fake-config-facade.js';

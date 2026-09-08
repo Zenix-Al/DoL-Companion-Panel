@@ -1,17 +1,17 @@
-import { registerSheet, applyToShadow } from '../core/styleRegistry.js';
 import debugLog from '../core/logger.js';
 import { safeCall } from '../core/safe-exec.js';
 import { dispatch } from '../core/actions/dispatcher.js';
 
-import { closeModal, openModal } from './components/modal.js';
-import { byUiId, ensureShadowRoot, refreshUiRefs } from './helpers/dom-query.js';
-import { initFloatingButtonDrag } from './components/controls.js';
-import { layoutTemplate, renderTemplate } from './renderers/layout.js';
-import baseCssText from './assets/base.css';
-import floatingCssText from './assets/floating.css';
-import modalCssText from './assets/modal.css';
-import responsiveCssText from './assets/responsive.css';
-import toastCssText from './assets/toast.css';
+import { registerSheet, applyToShadow } from './theme/style-registry.js';
+import { closeModal, openModal } from './shell/modal.js';
+import { byUiId, ensureShadowRoot, refreshUiRefs } from './shell/dom-query.js';
+import { initFloatingButtonDrag } from './shell/floating-controls.js';
+import { layoutTemplate, renderTemplate } from './shell/layout.js';
+import baseCssText from './theme/base.css';
+import floatingCssText from './theme/floating.css';
+import modalCssText from './theme/modal.css';
+import responsiveCssText from './theme/responsive.css';
+import toastCssText from './theme/toast.css';
 import tokensText from './theme/tokens.css';
 
 // Register stylesheets once at module load time (pure registration, no DOM side effects)

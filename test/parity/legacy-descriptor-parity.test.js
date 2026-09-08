@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import { createCheatDescriptorHarness } from '../helpers/cheat-descriptor-harness.js';
 import { runCheatParity } from '../helpers/cheat-parity-harness.js';
 import { createDomWithSugarCube } from '../helpers/dom-test-env.js';
+import { applyLegacyInfiniteArousal } from '../fixtures/legacy-toggle-effects.js';
 import { createFakeCheatScheduler } from '../helpers/fake-cheat-scheduler.js';
 import { createFakeRuntimeEngine } from '../helpers/fake-game-adapter.js';
 
@@ -104,14 +105,9 @@ test('working Money descriptor matches legacy invalid-input behavior without mut
 async function runLegacyInfiniteArousal({ initialState }) {
   const env = createDomWithSugarCube({ vars: initialState });
   try {
-    // eslint-disable-next-line no-restricted-syntax
-    const { createToggleDomainStatusActions } = await import(
-      /* allow-dynamic-import */ '../../src/features/cheat/toggle-domain-status-actions.js'
-    );
-    const actions = createToggleDomainStatusActions({});
-    actions.unliarousal();
+    applyLegacyInfiniteArousal(env.variables);
     env.variables.arousal = 40;
-    actions.unliarousal();
+    applyLegacyInfiniteArousal(env.variables);
     return observation({
       state: { arousal: env.variables.arousal },
       outcome: { ok: true, executions: 2 },

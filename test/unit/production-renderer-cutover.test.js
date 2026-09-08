@@ -1,9 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { access, readFile } from 'node:fs/promises';
 
-const bootstrapUrl = new URL('../../src/features/cheat-init.js', import.meta.url);
-const builderUrl = new URL('../../src/cheats/runtime/builder.js', import.meta.url);
+const bootstrapUrl = new URL('../../src/app/cheat-runtime.js', import.meta.url);
+const builderUrl = new URL('../../src/cheat/runtime/builder.js', import.meta.url);
+const applicationBootstrapUrl = new URL('../../src/app/bootstrap.js', import.meta.url);
 
 test('production bootstrap has no legacy metadata renderer or registry dependency', async () => {
   const source = await readFile(bootstrapUrl, 'utf8');
@@ -18,7 +19,8 @@ test('production bootstrap has no legacy metadata renderer or registry dependenc
     assert.equal(source.includes(forbidden), false, `production bootstrap contains ${forbidden}`);
   }
   assert.match(source, /createSectionShells/);
-  assert.match(source, /builder\.mountSection/);
+  assert.match(source, /builder\.configureSections/);
+  assert.match(source, /builder\.sectionOpened\('quick'\)/);
 });
 
 test('production builder mounts descriptors directly without hybrid slots', async () => {
@@ -31,3 +33,22 @@ test('production builder mounts descriptors directly without hybrid slots', asyn
   assert.match(productionBody, /mountCheatDescriptor/);
 });
 
+test('application bootstrap composes fixed lifecycle steps without a generic feature factory', async () => {
+  const source = await readFile(applicationBootstrapUrl, 'utf8');
+  for (const call of [
+    'registerListenerActions()',
+    'configureCheatRuntime(runtimeEngine)',
+    'initStorage()',
+    'initGameObservers()',
+  ]) {
+    assert.equal(source.includes(call), true, `application bootstrap is missing ${call}`);
+  }
+  assert.doesNotMatch(source, /feature-factory|\.\/registry\.js/);
+  await assert.rejects(
+    access(new URL('../../src/core/feature-factory.js', import.meta.url)),
+    { code: 'ENOENT' }
+  );
+  await assert.rejects(access(new URL('../../src/features/registry.js', import.meta.url)), {
+    code: 'ENOENT',
+  });
+});

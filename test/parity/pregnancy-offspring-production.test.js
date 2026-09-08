@@ -1,14 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { mcAbortionCheat } from '../../src/cheats/definitions/world/mc-abortion.cheat.js';
-import { mcChildManagerCheat } from '../../src/cheats/definitions/world/mc-child-manager.cheat.js';
-import { mcPregnancyCheat } from '../../src/cheats/definitions/world/mc-pregnancy.cheat.js';
-import { mcTentacleCheat } from '../../src/cheats/definitions/world/mc-tentacle.cheat.js';
-import { namedNpcAbortionCheat } from '../../src/cheats/definitions/world/named-npc-abortion.cheat.js';
-import { storedNpcAbortionCheat } from '../../src/cheats/definitions/world/stored-npc-abortion.cheat.js';
-import { mountCheatDescriptor } from '../../src/cheats/runtime/renderer.js';
-import { CHEAT_CONFIG_SCHEMA } from '../../src/core/config/cheat-config-schema.js';
+import { mcAbortionCheat } from '../../src/cheat/definitions/world/mc-abortion.cheat.js';
+import { mcChildManagerCheat } from '../../src/cheat/definitions/world/mc-child-manager.cheat.js';
+import { mcPregnancyCheat } from '../../src/cheat/definitions/world/mc-pregnancy.cheat.js';
+import { mcTentacleCheat } from '../../src/cheat/definitions/world/mc-tentacle.cheat.js';
+import { namedNpcAbortionCheat } from '../../src/cheat/definitions/world/named-npc-abortion.cheat.js';
+import { storedNpcAbortionCheat } from '../../src/cheat/definitions/world/stored-npc-abortion.cheat.js';
+import { mountCheatDescriptor } from '../../src/cheat/runtime/renderer.js';
+import { CHEAT_CONFIG_SCHEMA } from '../../src/cheat/contract/config-schema.js';
 import { createDomWithSugarCube } from '../helpers/dom-test-env.js';
 import { createFakeConfigFacade } from '../helpers/fake-config-facade.js';
 import { createFakeCheatScheduler } from '../helpers/fake-cheat-scheduler.js';

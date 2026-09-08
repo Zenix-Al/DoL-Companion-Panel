@@ -1,11 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { runDiagnosticsCheat } from '../../src/cheats/definitions/developer/run-diagnostics.cheat.js';
-import { mountCheatDescriptor } from '../../src/cheats/runtime/renderer.js';
-import { createDiagnosticProbe } from '../../src/diagnostics/probe.js';
-import { createDiagnosticRunner } from '../../src/diagnostics/runner.js';
-import { createProductionDiagnostics } from '../../src/diagnostics/production.js';
+import { runDiagnosticsCheat } from '../../src/cheat/definitions/developer/run-diagnostics.cheat.js';
+import { mountCheatDescriptor } from '../../src/cheat/runtime/renderer.js';
+import { createProductionDiagnostics } from '../../src/app/panel-health.js';
+import { createDiagnosticProbe, createDiagnosticRunner } from '../../src/core/health.js';
 import { createDomWithSugarCube } from '../helpers/dom-test-env.js';
 import { createFakeConfigFacade } from '../helpers/fake-config-facade.js';
 import { createFakeGameAdapter } from '../helpers/fake-game-adapter.js';

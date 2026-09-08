@@ -8,7 +8,7 @@ import {
   normalizeCheatConfig,
   resetCheatConfig,
   serializeCheatConfig,
-} from '../../src/core/config/cheat-config-schema.js';
+} from '../../src/cheat/contract/config-schema.js';
 import { configContractFixture, createFullDescriptor } from '../contracts/cheat-contract-cases.js';
 import { validateCheatConfigContract } from '../helpers/cheat-contract.js';
 import { createFakeConfigFacade } from '../helpers/fake-config-facade.js';
